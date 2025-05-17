@@ -1,0 +1,25 @@
+# Виртуальное окружение
+venv/
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# Python кэш-файлы
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Тестовые/временные файлы
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
