@@ -191,10 +191,10 @@
 
 import os
 import json
-from reader import parse_csv, normalize_fields, Employee
-from reports import REPORT_REGISTRY
-from cli import get_arguments
-from output import output_result, print_payout_report
+from salary_report.reader import parse_csv, normalize_fields, Employee
+from salary_report.reports import REPORT_REGISTRY
+from salary_report.cli import get_arguments
+from salary_report.output import output_result, print_payout_report
 
 def main():
     args = get_arguments()

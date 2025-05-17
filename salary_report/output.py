@@ -1,5 +1,4 @@
 from collections import defaultdict
-import json
 from typing import Optional
 
 def output_result(content: str, output_file: Optional[str]):
