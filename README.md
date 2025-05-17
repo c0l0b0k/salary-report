@@ -1,3 +1,4 @@
+
 # 📊 Salary Report
 
 Проект для генерации отчётов по сотрудникам на основе CSV-файлов. Позволяет объединять данные из нескольких источников, автоматически нормализует названия колонок, рассчитывает выплаты и формирует отчёты в табличном или JSON-формате.
@@ -16,13 +17,14 @@
 
 ## 🚀 Быстрый старт
 
-### 1. Клонируй репозиторий и перейди в папку проекта
+### 1. Клонировать репозиторий и перейти в папку проекта
 
 ```bash
-cd salary_testovoe
+git clone https://github.com/c0l0b0k/salary-report.git
+cd salary-report
 ```
 
-### 2. Создай и активируй виртуальное окружение
+### 2. Создать и активировать виртуальное окружение
 
 ```bash
 python -m venv venv
@@ -31,7 +33,7 @@ venv\Scripts\activate   # Windows
 source venv/bin/activate   # Linux/macOS
 ```
 
-### 3. Установи зависимости
+### 3. Установить зависимости
 
 ```bash
 pip install -r requirements.txt
@@ -42,10 +44,10 @@ pip install -r requirements.txt
 ## 📂 Структура проекта
 
 ```bash
-salary_testovoe/
+salary-report/
 ├── salary_report/           # Исходный код
 │   ├── cli.py               # Парсинг аргументов
-│   ├── main.py              # Точка входа
+│   ├── main.py              # Основная логика запуска (точка входа внутри пакета)
 │   ├── output.py            # Форматированный вывод
 │   ├── reader.py            # Чтение и нормализация CSV
 │   ├── reports.py           # Генерация отчётов
@@ -60,7 +62,7 @@ salary_testovoe/
 ├── data3.csv
 ├── result.json              # Пример отчёта в формате json
 ├── requirements.txt
-├── .gitignore
+├── run.py                   # Обёртка для запуска (entry point)
 └── README.md
 ```
 
@@ -71,25 +73,25 @@ salary_testovoe/
 ### 🖥️ Вывод отчёта в консоль:
 
 ```bash
-python salary_report/main.py data1.csv --report payout
+python run.py data1.csv --report payout
 ```
 
 ### ➕ С несколькими файлами:
 
 ```bash
-python salary_report/main.py data1.csv data2.csv --report payout
+python run.py data1.csv data2.csv --report payout
 ```
 
 ### 🧾 Вывод в формате JSON:
 
 ```bash
-python salary_report/main.py data1.csv --report payout --output-format json
+python run.py data1.csv --report payout --output-format json
 ```
 
 ### 💾 Сохранение JSON в файл:
 
 ```bash
-python salary_report/main.py data1.csv --report payout --output-format json --output-file result.json
+python run.py data1.csv --report payout --output-format json --output-file result.json
 ```
 
 ---
@@ -97,12 +99,12 @@ python salary_report/main.py data1.csv --report payout --output-format json --ou
 ## ⚠️ Обработка опечаток
 
 ```bash
-python salary_report/main.py data.csv --reprt payout
+python run.py data.csv --reprt payout
 # Вывод: Возможно, вы имели в виду '--report' вместо '--reprt'?
 ```
 
 ```bash
-python salary_report/main.py data.csv --report payut
+python run.py data.csv --report payut
 # Вывод: Возможно, вы имели в виду: 'payout'?
 ```
 
@@ -114,19 +116,14 @@ python salary_report/main.py data.csv --report payut
 |------------|--------------------------------------|
 | `payout`   | Расчёт выплат (часы × ставка)        |
 
+Пример вывода отчёта в консоль:
+![img.png](img.png)
 ---
 
 ## 🧪 Запуск тестов
 
-### Убедись, что ты в корне проекта:
-
 ```bash
-cd salary_testovoe
-```
-
-### Запуск всех тестов:
-
-```bash
+# Из корня проекта:
 pytest -v
 ```
 
@@ -142,12 +139,6 @@ pytest -v
 
 ## 📌 Зависимости
 
-Файл `requirements.txt` содержит список зависимостей:
-
 ```
-pytest
+pytest>=7.0
 ```
-
-
-
----
